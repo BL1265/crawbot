@@ -1,107 +1,588 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clawex | AI Smart Waste Sorting Robot</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CLAWEX | AI Smart Waste Sorting Robot</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="style.css">
 </head>
+
 
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">♻️ CLAWEX</div>
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#dashboard">Dashboard</a></li>
-            </ul>
-        </nav>
-    </header>
+<div class="background-blur blur1"></div>
+<div class="background-blur blur2"></div>
 
-    <main>
 
-        <section id="home" class="hero">
+<header>
 
-            <h1>CLAWEX</h1>
+<nav class="navbar">
 
-            <h2>AI-Powered Smart Waste Sorting Robot</h2>
+<div class="logo">
+♻️ CLAWEX
+</div>
 
-            <p>
-                Detect. Classify. Sort.
-            </p>
 
-            <button id="startBtn">
-                Start Detection
-            </button>
+<ul class="nav-links">
 
-        </section>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#workflow">Workflow</a></li>
+<li><a href="#dashboard">Dashboard</a></li>
+<li><a href="#team">Team</a></li>
 
-        <section id="about">
+</ul>
 
-            <h2>About Clawex</h2>
+</nav>
 
-            <p>
-                Clawex is an AI-powered smart waste sorting robot that identifies
-                different types of waste and assists in automated recycling
-                through intelligent classification and robotic sorting.
-            </p>
+</header>
 
-        </section>
 
-        <section id="features">
 
-            <h2>Features</h2>
 
-            <div class="feature-card">
-                📷 Live Camera Detection
-            </div>
+<section class="hero" id="home">
 
-            <div class="feature-card">
-                🧠 AI Waste Classification
-            </div>
 
-            <div class="feature-card">
-                🔵 Bluetooth Communication
-            </div>
+<div class="hero-left">
 
-            <div class="feature-card">
-                🤖 Robotic Waste Sorting
-            </div>
+<p class="tag">
+AI • ROBOTICS • RECYCLING
+</p>
 
-        </section>
 
-        <section id="dashboard">
+<h1>
+CLAWEX
+</h1>
 
-            <h2>Dashboard</h2>
 
-            <p>
-                AI Status:
-                <span id="aiStatus">Waiting...</span>
-            </p>
+<h2>
+AI-Powered Smart Waste Sorting Robot
+</h2>
 
-            <p>
-                Robot Status:
-                <span id="robotStatus">Disconnected</span>
-            </p>
 
-            <button id="connectBtn">
-                Connect Robot
-            </button>
+<p class="hero-description">
 
-        </section>
+An intelligent waste sorting robot that uses Artificial Intelligence to detect waste and a robotic claw to automatically recycle it.
 
-    </main>
+</p>
 
-    <script src="script.js"></script>
+
+<div class="hero-buttons">
+
+<button id="startBtn">
+Start Detection
+</button>
+
+
+<button class="secondary">
+Learn More
+</button>
+
+</div>
+
+
+</div>
+
+
+
+<div class="hero-right">
+
+<img src="assets/robot.png" id="robotImage" alt="CLAWEX Robot">
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section id="about">
+
+<h2>
+About CLAWEX
+</h2>
+
+
+<p>
+
+CLAWEX combines Artificial Intelligence, robotics and automation to create a smart waste sorting system. A camera detects waste, AI classifies the item, and the robot sorts it into the correct recycling bin.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="features">
+
+<h2>
+Features
+</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>📷 Live Camera</h3>
+
+<p>
+Detects waste objects in real time.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🧠 AI Recognition</h3>
+
+<p>
+Identifies waste categories using AI.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🔵 Bluetooth</h3>
+
+<p>
+Connects AI software with Arduino.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🤖 Robotic Claw</h3>
+
+<p>
+Moves waste into the correct bin.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<section id="workflow">
+
+<h2>
+How CLAWEX Works
+</h2>
+
+
+<div class="flow">
+
+
+<div class="step">
+📷
+<h3>Camera</h3>
+</div>
+
+
+<div class="arrow">→</div>
+
+
+<div class="step">
+🧠
+<h3>AI</h3>
+</div>
+
+
+<div class="arrow">→</div>
+
+
+<div class="step">
+💻
+<h3>Code</h3>
+</div>
+
+
+<div class="arrow">→</div>
+
+
+<div class="step">
+🔵
+<h3>Bluetooth</h3>
+</div>
+
+
+<div class="arrow">→</div>
+
+
+<div class="step">
+🤖
+<h3>Arduino</h3>
+</div>
+
+
+<div class="arrow">→</div>
+
+
+<div class="step">
+♻️
+<h3>Recycle</h3>
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="dashboard">
+
+
+<h2>
+Live Dashboard
+</h2>
+
+
+
+<div class="mode-selector">
+
+
+<h3>
+Detection Mode
+</h3>
+
+
+<button id="aiMode">
+🧠 AI Only
+</button>
+
+
+<button id="robotMode">
+🤖 AI + Robot
+</button>
+
+
+<p id="modeStatus">
+Current Mode: AI Only
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="dashboard">
+
+
+<div class="status">
+
+<h3>
+AI Status
+</h3>
+
+<p id="aiStatus">
+Waiting...
+</p>
+
+</div>
+
+
+
+
+<div class="status">
+
+<h3>
+Detected Item
+</h3>
+
+<p id="detectedItem">
+None
+</p>
+
+</div>
+
+
+
+
+
+<div class="status">
+
+<h3>
+Confidence
+</h3>
+
+<p id="confidence">
+0%
+</p>
+
+</div>
+
+
+
+
+
+<div class="status">
+
+<h3>
+Bluetooth
+</h3>
+
+<p id="bluetoothStatus">
+Disconnected
+</p>
+
+</div>
+
+
+
+
+
+<div class="status">
+
+<h3>
+Robot
+</h3>
+
+<p id="robotStatus">
+Offline
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="stats">
+
+<h2>
+Project Statistics
+</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h1>
+500+
+</h1>
+
+<p>
+Items Detected
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h1>
+98%
+</h1>
+
+<p>
+AI Accuracy
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h1>
+6
+</h1>
+
+<p>
+Waste Categories
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h1>
+24/7
+</h1>
+
+<p>
+System Ready
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="team">
+
+
+<h2>
+Meet The Team
+</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+👨‍💻 Evan Manoj
+</h3>
+
+<p>
+Class 7H
+</p>
+
+<p>
+Lead AI & Software Developer
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+🤖 Jeremy Francis Binoy
+</h3>
+
+<p>
+Class 7H
+</p>
+
+<p>
+Lead Robotics Engineer
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<footer>
+
+
+<h2>
+♻️ CLAWEX
+</h2>
+
+
+<p>
+AI Smart Waste Sorting Robot
+</p>
+<p>
+Built for STAI Competition
+</p>
+
+<p>
+Developed by:
+</p>
+
+<p>
+ Evan Manoj
+</p>
+<p>
+Jeremy Francis 
+</p>
+
+
+
+<p>
+Indian School Al Wadi Al Kabir    
+</p>
+<p>Sultanate of Oman</p>
+
+
+
+
+
+<p>
+© 2026 CLAWEX
+</p>
+
+
+</footer>
+
+
+
+
+<script src="script.js"></script>
+
 
 </body>
+
 </html>
