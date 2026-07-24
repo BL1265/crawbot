@@ -25,6 +25,7 @@
 <div class="background-blur blur2"></div>
 
 
+
 <header>
 
 <nav class="navbar">
@@ -52,10 +53,13 @@
 
 
 
+
+
 <section class="hero" id="home">
 
 
 <div class="hero-left">
+
 
 <p class="tag">
 AI • ROBOTICS • RECYCLING
@@ -79,7 +83,9 @@ An intelligent waste sorting robot that uses Artificial Intelligence to detect w
 </p>
 
 
+
 <div class="hero-buttons">
+
 
 <button id="startBtn">
 Start Detection
@@ -90,16 +96,21 @@ Start Detection
 Learn More
 </button>
 
+
 </div>
 
 
 </div>
+
+
 
 
 
 <div class="hero-right">
 
+
 <img src="assets/robot.png" id="robotImage" alt="CLAWEX Robot">
+
 
 </div>
 
@@ -111,7 +122,9 @@ Learn More
 
 
 
+
 <section id="about">
+
 
 <h2>
 About CLAWEX
@@ -133,7 +146,9 @@ CLAWEX combines Artificial Intelligence, robotics and automation to create a sma
 
 
 
+
 <section id="features">
+
 
 <h2>
 Features
@@ -143,9 +158,12 @@ Features
 <div class="cards">
 
 
+
 <div class="card">
 
-<h3>📷 Live Camera</h3>
+<h3>
+📷 Live Camera
+</h3>
 
 <p>
 Detects waste objects in real time.
@@ -155,9 +173,12 @@ Detects waste objects in real time.
 
 
 
+
 <div class="card">
 
-<h3>🧠 AI Recognition</h3>
+<h3>
+🧠 AI Recognition
+</h3>
 
 <p>
 Identifies waste categories using AI.
@@ -167,9 +188,12 @@ Identifies waste categories using AI.
 
 
 
+
 <div class="card">
 
-<h3>🔵 Bluetooth</h3>
+<h3>
+🔵 Bluetooth
+</h3>
 
 <p>
 Connects AI software with Arduino.
@@ -179,18 +203,23 @@ Connects AI software with Arduino.
 
 
 
+
 <div class="card">
 
-<h3>🤖 Robotic Claw</h3>
+<h3>
+🤖 Robotic Claw
+</h3>
 
 <p>
-Moves waste into the correct bin.
+Moves waste into the correct recycling bin.
 </p>
 
 </div>
 
 
+
 </div>
+
 
 </section>
 
@@ -200,7 +229,9 @@ Moves waste into the correct bin.
 
 
 
+
 <section id="workflow">
+
 
 <h2>
 How CLAWEX Works
@@ -216,7 +247,9 @@ How CLAWEX Works
 </div>
 
 
-<div class="arrow">→</div>
+<div class="arrow">
+→
+</div>
 
 
 <div class="step">
@@ -225,7 +258,9 @@ How CLAWEX Works
 </div>
 
 
-<div class="arrow">→</div>
+<div class="arrow">
+→
+</div>
 
 
 <div class="step">
@@ -234,7 +269,9 @@ How CLAWEX Works
 </div>
 
 
-<div class="arrow">→</div>
+<div class="arrow">
+→
+</div>
 
 
 <div class="step">
@@ -243,7 +280,9 @@ How CLAWEX Works
 </div>
 
 
-<div class="arrow">→</div>
+<div class="arrow">
+→
+</div>
 
 
 <div class="step">
@@ -252,7 +291,9 @@ How CLAWEX Works
 </div>
 
 
-<div class="arrow">→</div>
+<div class="arrow">
+→
+</div>
 
 
 <div class="step">
@@ -265,19 +306,13 @@ How CLAWEX Works
 
 
 </section>
-
-
-
-
-
-
-
 <section id="dashboard">
 
 
 <h2>
-Live Dashboard
+CLAWEX Live Control Dashboard
 </h2>
+
 
 
 
@@ -294,9 +329,11 @@ Detection Mode
 </button>
 
 
+
 <button id="robotMode">
 🤖 AI + Robot
 </button>
+
 
 
 <p id="modeStatus">
@@ -310,13 +347,43 @@ Current Mode: AI Only
 
 
 
+
+
+<div class="detection-screen">
+
+
+
+<h2>
+📷 Live Camera Detection
+</h2>
+
+
+
+
+<div class="camera-box">
+
+
+<video id="cameraFeed" autoplay playsinline></video>
+
+
+</div>
+
+
+
+
+
+
+
 <div class="dashboard">
+
+
+
 
 
 <div class="status">
 
 <h3>
-AI Status
+🧠 AI Status
 </h3>
 
 <p id="aiStatus">
@@ -328,10 +395,11 @@ Waiting...
 
 
 
+
 <div class="status">
 
 <h3>
-Detected Item
+📦 Detected Item
 </h3>
 
 <p id="detectedItem">
@@ -347,7 +415,23 @@ None
 <div class="status">
 
 <h3>
-Confidence
+♻️ Waste Type
+</h3>
+
+<p id="wasteType">
+None
+</p>
+
+</div>
+
+
+
+
+
+<div class="status">
+
+<h3>
+📊 Confidence
 </h3>
 
 <p id="confidence">
@@ -363,7 +447,7 @@ Confidence
 <div class="status">
 
 <h3>
-Bluetooth
+🔵 Bluetooth
 </h3>
 
 <p id="bluetoothStatus">
@@ -379,7 +463,7 @@ Disconnected
 <div class="status">
 
 <h3>
-Robot
+🤖 Robot
 </h3>
 
 <p id="robotStatus">
@@ -389,7 +473,46 @@ Offline
 </div>
 
 
+
+
+
+<div class="status">
+
+<h3>
+🗑️ Destination Bin
+</h3>
+
+<p id="destinationBin">
+Waiting...
+</p>
+
 </div>
+
+
+
+
+
+<div class="status">
+
+<h3>
+⚙️ Robot Action
+</h3>
+
+<p id="robotAction">
+Idle
+</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+</div>
+
 
 
 </section>
@@ -400,14 +523,18 @@ Offline
 
 
 
+
 <section id="stats">
+
 
 <h2>
 Project Statistics
 </h2>
 
 
+
 <div class="cards">
+
 
 
 <div class="card">
@@ -421,6 +548,8 @@ Items Detected
 </p>
 
 </div>
+
+
 
 
 
@@ -438,6 +567,8 @@ AI Accuracy
 
 
 
+
+
 <div class="card">
 
 <h1>
@@ -449,6 +580,8 @@ Waste Categories
 </p>
 
 </div>
+
+
 
 
 
@@ -465,17 +598,12 @@ System Ready
 </div>
 
 
+
 </div>
 
 
+
 </section>
-
-
-
-
-
-
-
 <section id="team">
 
 
@@ -484,45 +612,71 @@ Meet The Team
 </h2>
 
 
+
+
 <div class="cards">
 
 
+
 <div class="card">
+
 
 <h3>
 👨‍💻 Evan Manoj
 </h3>
 
+
 <p>
 Class 7H
 </p>
+
 
 <p>
 Lead AI & Software Developer
 </p>
 
+
+<p>
+Website Development • AI • Code • Bluetooth Integration
+</p>
+
+
 </div>
+
+
+
 
 
 
 <div class="card">
 
+
 <h3>
 🤖 Jeremy Francis Binoy
 </h3>
+
 
 <p>
 Class 7H
 </p>
 
+
 <p>
 Lead Robotics Engineer
 </p>
 
-</div>
+
+<p>
+Robot Design • Mechanical System • 3D Modelling
+</p>
 
 
 </div>
+
+
+
+</div>
+
 
 
 </section>
@@ -544,30 +698,48 @@ Lead Robotics Engineer
 <p>
 AI Smart Waste Sorting Robot
 </p>
+
+
+<br>
+
+
 <p>
 Built for STAI Competition
 </p>
+
+
+<br>
+
 
 <p>
 Developed by:
 </p>
 
+
 <p>
- Evan Manoj
-</p>
-<p>
-Jeremy Francis 
+Evan Manoj
 </p>
 
 
+<p>
+Jeremy Francis Binoy
+</p>
+
+
+<br>
+
 
 <p>
-Indian School Al Wadi Al Kabir    
+Indian School Al Wadi Al Kabir
 </p>
-<p>Sultanate of Oman</p>
 
 
+<p>
+Sultanate of Oman
+</p>
 
+
+<br>
 
 
 <p>
@@ -575,7 +747,10 @@ Indian School Al Wadi Al Kabir
 </p>
 
 
+
 </footer>
+
+
 
 
 

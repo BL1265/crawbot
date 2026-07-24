@@ -1,117 +1,132 @@
-/* =========================
-   CLAWEX SCRIPT
-========================= */
+// ===============================
+// CLAWEX CONTROL SYSTEM
+// ===============================
 
-
-// Dashboard elements
 
 const startBtn = document.getElementById("startBtn");
 
+const aiMode = document.getElementById("aiMode");
+const robotMode = document.getElementById("robotMode");
+
+const modeStatus = document.getElementById("modeStatus");
+
 const aiStatus = document.getElementById("aiStatus");
 const detectedItem = document.getElementById("detectedItem");
+const wasteType = document.getElementById("wasteType");
 const confidence = document.getElementById("confidence");
 
 const bluetoothStatus = document.getElementById("bluetoothStatus");
 const robotStatus = document.getElementById("robotStatus");
 
-const robotImage = document.getElementById("robotImage");
+const destinationBin = document.getElementById("destinationBin");
+const robotAction = document.getElementById("robotAction");
 
 
-// Mode buttons
 
-const aiMode = document.getElementById("aiMode");
-const robotMode = document.getElementById("robotMode");
-const modeStatus = document.getElementById("modeStatus");
-
-
-// Current mode
-
-let detectionMode = "AI Only";
+let currentMode = "AI";
 
 
 
 
-
-/* =========================
-   MODE SELECTION
-========================= */
-
-
-aiMode.addEventListener("click",()=>{
+// ===============================
+// MODE BUTTONS
+// ===============================
 
 
-    detectionMode = "AI Only";
+if(aiMode){
+
+aiMode.onclick = function(){
+
+
+    currentMode = "AI";
 
 
     modeStatus.textContent =
-    "Current Mode: 🧠 AI Detection Only";
-
-
-    robotStatus.textContent =
-    "Disabled";
+    "Current Mode: 🧠 AI Only";
 
 
     bluetoothStatus.textContent =
     "Not Required";
 
 
-});
+    robotStatus.textContent =
+    "Offline";
+
+
+    robotAction.textContent =
+    "No Robot Movement";
+
+
+};
+
+
+}
 
 
 
 
-robotMode.addEventListener("click",()=>{
+if(robotMode){
+
+robotMode.onclick = function(){
 
 
-    detectionMode = "AI + Robot";
+    currentMode = "ROBOT";
 
 
     modeStatus.textContent =
-    "Current Mode: 🤖 Full Robot Sorting";
+    "Current Mode: 🤖 AI + Robot";
+
+
+    bluetoothStatus.textContent =
+    "Connected";
 
 
     robotStatus.textContent =
     "Ready";
 
 
-    bluetoothStatus.textContent =
-    "Ready To Connect";
+    robotAction.textContent =
+    "Waiting";
 
 
-});
+};
+
+
+}
 
 
 
 
 
+// ===============================
+// START DETECTION
+// ===============================
 
 
-/* =========================
-   START DETECTION
-========================= */
+if(startBtn){
 
 
-startBtn.addEventListener("click",()=>{
+startBtn.onclick = function(){
+
+
+    startBtn.textContent =
+    "Scanning...";
 
 
     aiStatus.textContent =
-    "Scanning Waste...";
+    "Processing Camera";
 
 
     detectedItem.textContent =
-    "Searching...";
+    "Detecting...";
 
 
     confidence.textContent =
     "...";
 
 
-    startBtn.textContent =
-    "Detecting";
 
-
-
-    setTimeout(()=>{
+    setTimeout(function(){
 
 
         aiStatus.textContent =
@@ -122,12 +137,21 @@ startBtn.addEventListener("click",()=>{
         "Plastic Bottle";
 
 
+        wasteType.textContent =
+        "Plastic";
+
+
         confidence.textContent =
         "98%";
 
 
 
-        if(detectionMode==="AI Only"){
+        destinationBin.textContent =
+        "Plastic Recycling Bin";
+
+
+
+        if(currentMode==="AI"){
 
 
             bluetoothStatus.textContent =
@@ -138,8 +162,11 @@ startBtn.addEventListener("click",()=>{
             "Standby";
 
 
-        }
+            robotAction.textContent =
+            "Detection Finished";
 
+
+        }
 
 
         else{
@@ -153,6 +180,10 @@ startBtn.addEventListener("click",()=>{
             "Sorting";
 
 
+            robotAction.textContent =
+            "Moving Claw";
+
+
         }
 
 
@@ -161,22 +192,70 @@ startBtn.addEventListener("click",()=>{
         "Detection Complete";
 
 
-
     },3000);
 
+
+};
+
+
+}
+
+
+
+
+
+
+
+// ===============================
+// LIVE CAMERA
+// ===============================
+
+
+const cameraFeed =
+document.getElementById("cameraFeed");
+
+
+
+if(cameraFeed){
+
+
+navigator.mediaDevices.getUserMedia({
+
+    video:true
+
+})
+
+.then(function(stream){
+
+
+    cameraFeed.srcObject = stream;
+
+
+})
+
+.catch(function(error){
+
+
+    console.log(
+    "Camera permission denied:",
+    error
+    );
 
 
 });
 
 
+}
 
 
 
 
 
-/* =========================
-   CARD ANIMATION
-========================= */
+
+
+// ===============================
+// CARD ANIMATION
+// ===============================
 
 
 const cards =
@@ -184,7 +263,7 @@ document.querySelectorAll(".card");
 
 
 
-cards.forEach(card=>{
+cards.forEach(function(card){
 
 
     card.style.opacity="0";
@@ -193,7 +272,7 @@ cards.forEach(card=>{
     "translateY(40px)";
 
     card.style.transition=
-    "0.8s ease";
+    "0.8s";
 
 
 });
@@ -202,70 +281,30 @@ cards.forEach(card=>{
 
 
 
-window.addEventListener("scroll",()=>{
+window.addEventListener("scroll",function(){
 
 
-    cards.forEach(card=>{
+cards.forEach(function(card){
 
 
-        let position =
-        card.getBoundingClientRect().top;
+    let position =
+    card.getBoundingClientRect().top;
 
 
 
-        if(position <
-        window.innerHeight - 100){
+    if(position < window.innerHeight-100){
 
 
-            card.style.opacity="1";
+        card.style.opacity="1";
+
+        card.style.transform=
+        "translateY(0)";
 
 
-            card.style.transform=
-            "translateY(0)";
-
-
-        }
-
-
-    });
+    }
 
 
 });
 
 
-
-
-
-
-
-/* =========================
-   ROBOT EFFECT
-========================= */
-
-
-if(robotImage){
-
-
-robotImage.addEventListener("mouseenter",()=>{
-
-
-    robotImage.style.filter =
-    "drop-shadow(0 0 25px #00ff99)";
-
-
 });
-
-
-
-
-robotImage.addEventListener("mouseleave",()=>{
-
-
-    robotImage.style.filter =
-    "none";
-
-
-});
-
-
-}

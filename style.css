@@ -1,116 +1,110 @@
-/* =========================
-   CLAWEX STYLE CSS
-========================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
 }
 
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
 
-body {
-
-    background: #06140d;
-    color: white;
-    overflow-x: hidden;
-
+body{
+    background:#06140d;
+    color:white;
+    overflow-x:hidden;
 }
 
 
-/* BACKGROUND LIGHT EFFECTS */
 
-.background-blur {
+/* BACKGROUND BLUR */
 
-    position: fixed;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.35;
-    z-index: -1;
+.background-blur{
+
+    position:fixed;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:0.35;
+    z-index:-1;
 
 }
 
 
-.blur1 {
+.blur1{
 
-    background: #00ff99;
-    top: 100px;
-    left: -100px;
+    background:#00ff99;
+    top:100px;
+    left:-100px;
+
+}
+
+
+.blur2{
+
+    background:#00ccff;
+    bottom:100px;
+    right:-100px;
 
 }
 
-
-.blur2 {
-
-    background: #00ccff;
-    bottom: 100px;
-    right: -100px;
-
-}
 
 
 
 /* NAVBAR */
 
+.navbar{
 
-.navbar {
+    position:fixed;
+    top:0;
+    width:100%;
 
-    position: fixed;
-    top: 0;
-    width: 100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding:20px 8%;
 
-    padding: 20px 8%;
+    background:rgba(0,0,0,0.6);
 
-    background: rgba(0,0,0,0.55);
-    backdrop-filter: blur(15px);
+    backdrop-filter:blur(15px);
 
-    z-index: 1000;
-
-}
-
-
-.logo {
-
-    font-size: 30px;
-    font-weight: 800;
-    color: #00ff99;
+    z-index:1000;
 
 }
 
 
+.logo{
 
-.nav-links {
-
-    display: flex;
-    gap: 30px;
-    list-style: none;
-
-}
-
-
-
-.nav-links a {
-
-    text-decoration: none;
-    color: white;
-    transition: .3s;
+    color:#00ff99;
+    font-size:30px;
+    font-weight:800;
 
 }
 
 
-.nav-links a:hover {
+.nav-links{
+
+    display:flex;
+    list-style:none;
+    gap:30px;
+
+}
+
+
+.nav-links a{
+
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+
+}
+
+
+.nav-links a:hover{
 
     color:#00ff99;
 
@@ -123,13 +117,13 @@ body {
 /* HERO */
 
 
-.hero {
+.hero{
 
     min-height:100vh;
 
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
 
     padding:120px 8% 50px;
 
@@ -140,23 +134,7 @@ body {
 
 
 
-.hero-left {
-
-    max-width:600px;
-
-}
-
-
-.tag {
-
-    color:#00ff99;
-    font-weight:600;
-
-}
-
-
-
-.hero h1 {
+.hero h1{
 
     font-size:90px;
     font-weight:800;
@@ -165,7 +143,7 @@ body {
 
 
 
-.hero h2 {
+.hero h2{
 
     font-size:32px;
     margin:15px 0;
@@ -174,27 +152,37 @@ body {
 
 
 
-.hero-description {
+.tag{
 
-    line-height:1.8;
-    color:#d5eee0;
+    color:#00ff99;
+    font-weight:600;
 
 }
 
 
 
-.hero-right img {
+.hero-description{
+
+    max-width:600px;
+    line-height:1.8;
+
+}
+
+
+
+.hero-right img{
 
     width:430px;
-    animation: floating 4s infinite ease-in-out;
+
+    animation:floating 4s infinite ease-in-out;
 
 }
 
 
 
-@keyframes floating {
+@keyframes floating{
 
-    50% {
+    50%{
 
         transform:translateY(-20px);
 
@@ -205,12 +193,13 @@ body {
 
 
 
+
 /* BUTTONS */
 
 
-button {
+button{
 
-    margin-top:30px;
+    margin-top:25px;
 
     padding:15px 35px;
 
@@ -234,25 +223,25 @@ button {
 
 
 
-button:hover {
+button:hover{
 
     transform:translateY(-5px);
 
-    box-shadow:0 10px 30px #00ff99;
+    box-shadow:0 10px 25px #00ff99;
 
 }
 
 
 
-.secondary {
-
-    margin-left:15px;
+.secondary{
 
     background:transparent;
 
     color:white;
 
     border:2px solid #00ff99;
+
+    margin-left:15px;
 
 }
 
@@ -263,7 +252,7 @@ button:hover {
 /* SECTIONS */
 
 
-section {
+section{
 
     padding:100px 8%;
 
@@ -271,25 +260,15 @@ section {
 
 
 
-section h2 {
+section h2{
 
     text-align:center;
-
-    font-size:45px;
 
     color:#00ff99;
 
+    font-size:45px;
+
     margin-bottom:50px;
-
-}
-
-
-
-section p {
-
-    text-align:center;
-
-    line-height:1.8;
 
 }
 
@@ -300,12 +279,11 @@ section p {
 /* CARDS */
 
 
-.cards {
+.cards{
 
     display:grid;
 
-    grid-template-columns:
-    repeat(auto-fit,minmax(240px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 
     gap:30px;
 
@@ -313,25 +291,23 @@ section p {
 
 
 
-.card {
+.card{
 
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,0.08);
 
     padding:30px;
 
     border-radius:25px;
 
-    border:1px solid rgba(0,255,153,.25);
+    border:1px solid rgba(0,255,153,0.3);
 
-    backdrop-filter:blur(10px);
-
-    transition:.4s;
+    transition:.3s;
 
 }
 
 
 
-.card:hover {
+.card:hover{
 
     transform:translateY(-10px);
 
@@ -339,13 +315,13 @@ section p {
 
 
 
-.card h3 {
+.card h3{
 
     color:#00ff99;
 
-    margin-bottom:15px;
-
 }
+
+
 
 
 
@@ -354,7 +330,7 @@ section p {
 /* WORKFLOW */
 
 
-.flow {
+.flow{
 
     display:flex;
 
@@ -370,7 +346,7 @@ section p {
 
 
 
-.step {
+.step{
 
     width:150px;
     height:150px;
@@ -395,7 +371,7 @@ section p {
 
 
 
-.step h3 {
+.step h3{
 
     font-size:18px;
 
@@ -403,13 +379,13 @@ section p {
 
 
 
-.arrow {
-
-    color:#00ff99;
+.arrow{
 
     font-size:40px;
+    color:#00ff99;
 
 }
+
 
 
 
@@ -418,7 +394,7 @@ section p {
 /* DASHBOARD */
 
 
-.mode-selector {
+.mode-selector{
 
     text-align:center;
 
@@ -428,7 +404,7 @@ section p {
 
 
 
-.mode-selector h3 {
+.mode-selector h3{
 
     color:#00ff99;
 
@@ -438,22 +414,76 @@ section p {
 
 
 
-#modeStatus {
+#modeStatus{
 
     margin-top:20px;
-
-    color:#d5eee0;
 
 }
 
 
 
-.dashboard {
+
+
+
+/* CAMERA SCREEN */
+
+
+.detection-screen{
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid #00ff99;
+
+    border-radius:30px;
+
+    padding:40px;
+
+}
+
+
+
+.camera-box{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:40px 0;
+
+}
+
+
+
+#cameraFeed{
+
+    width:600px;
+
+    height:350px;
+
+    background:black;
+
+    border:3px solid #00ff99;
+
+    border-radius:25px;
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+
+
+/* STATUS BOXES */
+
+
+.dashboard{
 
     display:grid;
 
-    grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 
     gap:25px;
 
@@ -461,15 +491,15 @@ section p {
 
 
 
-.status {
+.status{
 
     background:#10291d;
-
-    border:1px solid #00ff99;
 
     padding:30px;
 
     border-radius:20px;
+
+    border:1px solid #00ff99;
 
     text-align:center;
 
@@ -477,7 +507,7 @@ section p {
 
 
 
-.status h3 {
+.status h3{
 
     color:#00ff99;
 
@@ -485,13 +515,14 @@ section p {
 
 
 
-.status p {
+.status p{
 
     margin-top:15px;
 
-    font-size:22px;
+    font-size:20px;
 
 }
+
 
 
 
@@ -500,7 +531,7 @@ section p {
 /* FOOTER */
 
 
-footer {
+footer{
 
     background:#020805;
 
@@ -512,7 +543,7 @@ footer {
 
 
 
-footer h2 {
+footer h2{
 
     color:#00ff99;
 
@@ -520,11 +551,6 @@ footer h2 {
 
 
 
-footer p {
-
-    margin:10px;
-
-}
 
 
 
@@ -535,14 +561,15 @@ footer p {
 @media(max-width:900px){
 
 
-.navbar {
+.navbar{
 
     flex-direction:column;
 
 }
 
 
-.nav-links {
+
+.nav-links{
 
     flex-wrap:wrap;
 
@@ -552,7 +579,7 @@ footer p {
 
 
 
-.hero {
+.hero{
 
     flex-direction:column;
 
@@ -562,7 +589,7 @@ footer p {
 
 
 
-.hero h1 {
+.hero h1{
 
     font-size:60px;
 
@@ -570,15 +597,25 @@ footer p {
 
 
 
-.hero-right img {
+.hero-right img{
 
-    margin-top:40px;
+    width:300px;
 
 }
 
 
 
-.flow {
+#cameraFeed{
+
+    width:100%;
+
+    height:250px;
+
+}
+
+
+
+.flow{
 
     flex-direction:column;
 
@@ -586,7 +623,7 @@ footer p {
 
 
 
-.arrow {
+.arrow{
 
     transform:rotate(90deg);
 
