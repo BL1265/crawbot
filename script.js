@@ -20,9 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const robotState = document.getElementById("robotState");
   const historyBody = document.getElementById("historyBody");
   const liveClock = document.getElementById("liveClock");
+  const cameraFeed = document.getElementById("cameraFeed");
+  const cameraNote = document.getElementById("cameraNote");
 
   let currentMode = "AI Only";
   let running = false;
+  let cameraStream = null;
 
   const pad = (n) => String(n).padStart(2, "0");
 
@@ -31,15 +34,14 @@ document.addEventListener("DOMContentLoaded", () => {
     return `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
   }
 
+  function setClock() {
+    if (liveClock) liveClock.textContent = `🟢 LIVE ${nowTime()}`;
+  }
+
   function setConfidence(percent) {
     const p = Math.max(0, Math.min(100, percent));
     confidence.textContent = `${p}%`;
     confidenceBar.style.width = `${p}%`;
-  }
-
-  function setClock() {
-    if (!liveClock) return;
-    liveClock.textContent = `🟢 LIVE ${nowTime()}`;
   }
 
   function setStatusColors(aiText, robotText) {
@@ -138,6 +140,42 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => el.classList.remove("glow"), 650);
   }
 
+  async function startCamera() {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      cameraState.textContent = "Unsupported";
+      if (cameraNote) cameraNote.textContent = "This browser does not support camera access.";
+      return;
+    }
+
+    try {
+      if (cameraStream) {
+        cameraStream.getTracks().forEach((t) => t.stop());
+      }
+
+      cameraState.textContent = "Starting...";
+      if (cameraNote) cameraNote.textContent = "Requesting camera permission...";
+
+      cameraStream = await navigator.mediaDevices.getUserMedia({
+        video: {
+          facingMode: "environment"
+        },
+        audio: false
+      });
+
+      cameraFeed.srcObject = cameraStream;
+      await cameraFeed.play();
+
+      cameraState.textContent = "Online";
+      if (cameraNote) cameraNote.textContent = "Camera is live.";
+    } catch (err) {
+      console.error("Camera error:", err);
+      cameraState.textContent = "Blocked";
+      if (cameraNote) {
+        cameraNote.textContent = "Allow camera access, then refresh. Use GitHub Pages or Live Server, not a file double-click.";
+      }
+    }
+  }
+
   function runDetectionDemo() {
     if (running) return;
     running = true;
@@ -157,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
       robot: currentMode === "AI + Robot" ? "Preparing..." : "Offline",
       bin: "Waiting...",
       action: "Scanning Platform",
-      camera: "Online",
+      camera: cameraState.textContent || "Online",
       model: "Running",
       arduino: currentMode === "AI + Robot" ? "Connecting..." : "Disconnected",
       arm: currentMode === "AI + Robot" ? "Preparing" : "Standby"
@@ -180,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
         robot: currentMode === "AI + Robot" ? "Active" : "Offline",
         bin: "Plastic Bin",
         action: currentMode === "AI + Robot" ? "Moving Robotic Claw" : "Prediction Complete",
-        camera: "Online",
+        camera: cameraState.textContent || "Online",
         model: "Ready",
         arduino: currentMode === "AI + Robot" ? "Connected" : "Disconnected",
         arm: currentMode === "AI + Robot" ? "Sorting" : "Standby"
@@ -204,7 +242,12 @@ document.addEventListener("DOMContentLoaded", () => {
     pulse(robotModeBtn);
   });
 
-  startBtn.addEventListener("click", runDetectionDemo);
+  startBtn.addEventListener("click", async () => {
+    if (!cameraStream) {
+      await startCamera();
+    }
+    runDetectionDemo();
+  });
 
   learnBtn.addEventListener("click", () => {
     document.getElementById("about").scrollIntoView({ behavior: "smooth" });
@@ -232,4 +275,5 @@ document.addEventListener("DOMContentLoaded", () => {
   setMode("AI Only");
   setClock();
   setInterval(setClock, 1000);
+  startCamera();
 });

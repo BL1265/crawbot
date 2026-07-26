@@ -52,10 +52,19 @@ body{
   gap:24px;
 }
 .logo{
-  font-size:32px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:26px;
   font-weight:900;
   letter-spacing:1px;
   color:#00ff99;
+}
+.logo-img{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+  display:block;
 }
 .nav-links{
   list-style:none;

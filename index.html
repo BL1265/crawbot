@@ -16,7 +16,10 @@
 
   <header class="topbar">
     <nav class="nav">
-      <div class="logo">♻ CLAWEX</div>
+      <div class="logo">
+        <img src="assets/logo.png" alt="CLAWEX logo" class="logo-img">
+        <span>CLAWEX</span>
+      </div>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -189,7 +192,7 @@
       </div>
 
       <div class="dash-top">
-        <div class="glass top-stat"><span>Camera</span><strong id="cameraState">Online</strong></div>
+        <div class="glass top-stat"><span>Camera</span><strong id="cameraState">Starting...</strong></div>
         <div class="glass top-stat"><span>AI Model</span><strong id="modelState">Ready</strong></div>
         <div class="glass top-stat"><span>Arduino</span><strong id="arduinoState">Disconnected</strong></div>
         <div class="glass top-stat"><span>Robot Arm</span><strong id="robotState">Standby</strong></div>
@@ -216,15 +219,15 @@
             <div class="scan-line"></div>
             <video id="cameraFeed" autoplay playsinline muted></video>
           </div>
-          <p class="camera-note">Waiting for camera...</p>
+          <p class="camera-note" id="cameraNote">Camera will start automatically.</p>
         </div>
 
         <div class="glass analysis-panel">
           <div class="status-grid">
-            <div class="status-card"><h4>AI Status</h4><p id="aiStatus">Waiting...</p></div>
-            <div class="status-card"><h4>Detected Item</h4><p id="detectedItem">None</p></div>
-            <div class="status-card"><h4>Waste Type</h4><p id="wasteType">Unknown</p></div>
-            <div class="status-card"><h4>Destination</h4><p id="destinationBin">Waiting...</p></div>
+            <div class="status-card"><h4>🧠 AI Status</h4><p id="aiStatus">Waiting...</p></div>
+            <div class="status-card"><h4>📦 Detected Item</h4><p id="detectedItem">None</p></div>
+            <div class="status-card"><h4>♻ Waste Type</h4><p id="wasteType">Unknown</p></div>
+            <div class="status-card"><h4>🗑 Destination</h4><p id="destinationBin">Waiting...</p></div>
           </div>
 
           <div class="conf-box glass">
