@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CrawBot | AI Camera</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="page-background"></div>
+
+<header class="site-header">
+
+    <div class="nav-inner">
+
+        <a href="index.html" class="brand">
+            <img src="assets/logo.png" alt="CrawBot">
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a class="active" href="camera.html">Camera</a>
+            <a href="workflow.html">Workflow</a>
+            <a href="about.html">About</a>
+        </nav>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="inner-page">
+
+    <section class="page-intro">
+
+        <div class="eyebrow-pill">
+            📷 AI VISION SYSTEM
+        </div>
+
+        <h1>
+            See what
+            <span>CrawBot sees.</span>
+        </h1>
+
+        <p>
+            This page will become the live camera and AI detection
+            interface once the hardware and trained model are connected.
+        </p>
+
+    </section>
+
+
+    <section class="camera-page-grid">
+
+        <div class="camera-large">
+
+            <div class="camera-header">
+
+                <span>
+                    LIVE CAMERA
+                </span>
+
+                <strong>
+                    STANDBY
+                </strong>
+
+            </div>
+
+
+            <div class="camera-preview">
+
+                <div class="camera-grid"></div>
+
+                <div class="camera-frame">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+                <div class="camera-message">
+
+                    <div class="camera-icon"></div>
+
+                    <h3>
+                        Camera Offline
+                    </h3>
+
+                    <p>
+                        Camera hardware will be connected later.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <aside class="detection-box">
+
+            <span class="box-label">
+                🧠 DETECTION
+            </span>
+
+            <div class="detection-item">
+                <span>Object</span>
+                <strong>Waiting...</strong>
+            </div>
+
+            <div class="detection-item">
+                <span>Category</span>
+                <strong>Unknown</strong>
+            </div>
+
+            <div class="detection-item">
+                <span>Confidence</span>
+                <strong>--</strong>
+            </div>
+
+            <div class="confidence-line">
+                <div></div>
+            </div>
+
+            <div class="camera-status">
+                <span>System</span>
+                <strong>READY</strong>
+            </div>
+
+        </aside>
+
+    </section>
+
+
+    <section class="sample-detection">
+
+        <div class="section-heading">
+            <span>01</span>
+
+            <div>
+                <p>SUPPORTED ITEMS</p>
+                <h2>
+                    Designed for small and large waste.
+                </h2>
+            </div>
+        </div>
+
+
+        <div class="item-grid">
+
+            <div class="item-card">
+                🧻
+                <strong>Wrappers</strong>
+                <span>Small objects</span>
+            </div>
+
+            <div class="item-card">
+                🧴
+                <strong>Water Bottles</strong>
+                <span>Larger objects</span>
+            </div>
+
+            <div class="item-card">
+                📦
+                <strong>Cardboard</strong>
+                <span>Packaging</span>
+            </div>
+
+            <div class="item-card">
+                🥫
+                <strong>Metal</strong>
+                <span>Cans and containers</span>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+
+            <img src="assets/logo.png" alt="CrawBot">
+
+            <div>
+                <strong>CrawBot</strong>
+                <span>AI Camera System</span>
+            </div>
+
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="camera.html">Camera</a>
+            <a href="workflow.html">Workflow</a>
+            <a href="about.html">About</a>
+        </div>
+
+        <div class="footer-copy">
+            © <span id="year"></span> CrawBot
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
